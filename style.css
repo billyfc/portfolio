@@ -103,3 +103,12 @@ h1, h2, h3, h4, h5, h6 {
 .resume section li {
     margin-bottom: 0.4em;
 }
+
+.resume h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+.resume h1 + p {
+    margin-top: 0;
+}
