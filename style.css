@@ -36,3 +36,22 @@ nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0.1em;
 }
+
+input, textarea, button {
+  font: inherit;
+}
+
+label {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+label, button {
+  grid-column: 1 / -1;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
