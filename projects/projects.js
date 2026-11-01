@@ -8,6 +8,8 @@ const projectsTitle = document.querySelector('.projects-title')
 projectsTitle.textContent = `Projects (${projects.length})`
 
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
+let selectedIndex = -1;
+
 function renderPieChart(projectsGiven) {
     let rolledData = d3.rollups(
     projectsGiven,
@@ -24,12 +26,40 @@ function renderPieChart(projectsGiven) {
     // Select and clear existing chart
     let svg = d3.select('#projects-pie-plot');
     svg.selectAll('path').remove();
-    arcs.forEach((arc, idx) => {
-    d3.select('#projects-pie-plot')
-        .append('path')
-        .attr('d', arc)
-        .attr('fill', colors(idx));
+    arcs.forEach((arc, i) => {
+        svg
+            .append('path')
+            .attr('d', arc)
+            .attr('fill', colors(i))
+            .on('click', () => {
+                selectedIndex = selectedIndex === i ? -1 : i;
+
+        svg
+            .selectAll('path')
+            .attr('class', (_, idx) =>
+                idx === selectedIndex ? 'selected' : ''
+            );
+
+        legend
+            .selectAll('li')
+            .attr('class', (_, idx) =>
+            idx === selectedIndex ? 'legend-item selected' : 'legend-item'
+        );
+
+        if (selectedIndex === -1) {
+            renderProjects(projects, projectsContainer, 'h2');
+        } else {
+            let selectedYear = data[selectedIndex].label;
+
+            let filteredProjects = projects.filter(
+            (project) => project.year === selectedYear
+        );
+
+        renderProjects(filteredProjects, projectsContainer, 'h2');
+    }
+
     });
+});
     // Select and clear existing legend
     let legend = d3.select('.legend');
     legend.selectAll('li').remove();
@@ -37,6 +67,7 @@ function renderPieChart(projectsGiven) {
     legend
         .append('li')
         .attr('style', `--color:${colors(idx)}`) // set the style attribute while passing in parameters
+        .attr('class', 'legend-item')
         .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`); // set the inner html of <li>
     });
 }
