@@ -145,3 +145,38 @@ html {
   margin-block: 2em;
   overflow: visible;
 }
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  list-style: none;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 0.25em;
+  flex-shrink: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.container .legend {
+  flex: 1;
+}
