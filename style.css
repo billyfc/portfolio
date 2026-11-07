@@ -221,3 +221,12 @@ html {
   font-size: 2rem;
   font-weight: bold;
 }
+
+.gridlines line {
+  stroke: #ddd;
+  stroke-opacity: 0.5;
+}
+
+.gridlines path {
+  display: none;
+}
