@@ -201,3 +201,23 @@ html {
     fill: var(--color);
   }
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stats dt {
+  grid-row: 1;
+  font-size: 0.85rem;
+  color: gray;
+  text-transform: uppercase;
+}
+
+.stats dd {
+  grid-row: 2;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
