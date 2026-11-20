@@ -13,6 +13,13 @@
   <p>This page includes stats about the code of this website.</p>
   <div id="stats"></div>
   <h2>Commits by time of day</h2>
+  <div>
+    <label id="commit-filter">
+      Show commits until:
+      <input type="range" id="commit-slider" min="0" max="100" value="100" />
+      <time id="slider-time"></time>
+    </label>
+  </div>
   <div id="chart"></div>
   <p id="selection-count">No commits selected</p>
   <dl id="language-breakdown" class="stats"></dl>
