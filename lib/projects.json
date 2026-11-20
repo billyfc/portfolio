@@ -70,5 +70,13 @@
         "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Enim soluta eaque perferendis impedit! Quibusdam alias dolor deleniti error sint officiis maxime, quis optio vel dolorum, obcaecati laborum voluptatibus enim repellendus ad nulla? Aperiam accusantium molestias illo cum voluptatibus?"
+    },
+
+    {
+        "title": "Bikewatching",
+        "year": "2026",
+        "description": "An interactive map of Boston-area bike traffic using Mapbox and D3, with time filtering and traffic-flow visualization.",
+        "image": "images/bikewatching.png",
+        "url": "https://billyfc.github.io/bikewatching/"
     }
 ]
